@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Movie Portal Portal</title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet2.css">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+    <style type="text/css">
+        .search-box-wrapper {
+            text-align: center;
+            font-size: x-large;
+            font-weight: 700;
+        }
+        
+        .auto-style11 {
+            width: 100%;
+            height: 296px;
+        }
+        .auto-style18 {
+            width: 105%;
+            height: 290px;
+        }
+      
+        #username {
+            width: 286px;
+            height: 32px;
+        }
+        .auto-style20 {
+            width: 180px;
+            color:white;
+        }
+        .auto-style21 {
+            width: 180px;
+            color:white;
+        }
+      
+        .auto-style22 {
+            width: 180px;
+            color: white;
+        }
+        .auto-style44 {
+            width: 180px;
+            color: white;
+        }
+      
+        </style>
+   
+ </head>
+<body>
+    <form id="form1" runat="server">
+        
+         <div class="nav">
+          <ul>
+            <li id="header"> Movie Portal</li>
+            <li><a href="http://localhost:24325/final/"> Home</a></li>
+            <li><a href="http://localhost:24325/final/info.aspx">Info</a></li>
+            <li><a href="http://localhost:24325/final/review.aspx"> Review</a></li>
+            <li><a href="http://localhost:24325/final/help.aspx"> Help</a></li>
+            <li><a href="http://localhost:24325/final/contact.aspx"> Contact</a></li>
+            <li><a href="http://localhost:24325/final/topx.aspx"> TopX</a></li>
+            
+          </ul>
+        </div>
+
+          <br>
+              <div id="search-box-wrapper">
+    <input type="text" placeholder="Serach here..." style=" height: 27px; width: 213px">
+    <button>&#128269</button>
+   
+</div>
+
+              <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                  <asp:Timer ID="Timer1" runat="server" Interval="4000" OnTick="Timer1_Tick">
+                  </asp:Timer>
+                  <asp:Image ID="Image1"  Height="500px" Width="1340px" runat="server" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    <table class="auto-style11">
+        <tr>
+            <td class="login">
+              <dl>
+               <dd class="loginhead">Login</dd>
+               <dd>User Name</dd>
+               <dd><input type="text" id="username"><br></dd>
+               <dd>Password</dd>
+               <dd><input type="Password" name="" style="width: 284px; margin-left: 0px; height: 33px;"></dd>
+               <dd>
+               <asp:TextBox ID="sign" runat="server" style="text-align: center; margin-top: 0px; margin-left: 27px;" Width="98px" BackColor="#106BAA" Height="36px">Sign-In</asp:TextBox>
+               <asp:HyperLink ID="reg" runat="server" a href="register.aspx" ForeColor="#106BAA" NavigateUrl="http://localhost:24325/final/register.aspx">Register</asp:HyperLink>
+               </dd>
+             </dl>
+      
+        </div>
+            </td>
+            <td class="categories">
+                <table class="auto-style11">
+                    <tr  class="categorieshead">
+                        <td class="auto-style22">Categories</td>
+                        <td class="auto-style20">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style22">Action</td>
+                        <td class="auto-style20">Comedy</td>
+                        <td class="auto-style44">Horror</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style22">Adventure</td>
+                        <td class="auto-style20">Crime</td>
+                        <td class="auto-style44">Music</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style22">Animation</td>
+                        <td class="auto-style20">Drama</td>
+                        <td class="auto-style44">Thriller</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style22">Biography</td>
+                        <td class="auto-style20">Family</td>
+                        <td class="auto-style44">Romance</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style22">Custom</td>
+                        <td class="auto-style20">History</td>
+                        <td class="auto-style44">TV show</td>
+                    </tr>
+                </table>
+            </td>
+            <td class="release">
+                <table class="auto-style18">
+                    <tr class="releasehead">
+                        <td class="auto-style21">Release</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style21">2018</td>
+                        <td class="auto-style21">2013</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style21">2017</td>
+                        <td class="auto-style21">2012</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style21">2016</td>
+                        <td class="auto-style21">2011</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style21">2015</td>
+                        <td class="auto-style21">2010</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style21">2014</td>
+                        <td class="auto-style21">2009</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+   
+
+
+     <div>
+   
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+ 
